@@ -14,7 +14,7 @@ export default function Home() {
         <div>Tiny missions. Big office mischief.</div>
         <p>
           Assign covert tasks to your colleagues, track their progress, and
-          watch the chaos unfold — all under the guise of a normal workday.
+          watch the chaos unfold — all under the guise of the  normal workday.
         </p>
         <p>
           Whether you&apos;re swapping someone&apos;s keyboard keys, hiding a
