@@ -1,6 +1,10 @@
 {
   "permissions": {
-    "allow": ["Bash(git push *)", "Bash(git add *)"]
+    "allow": [
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(npx --yes prettier --write \"**/*.{ts,tsx,css,json}\" --ignore-path .gitignore)"
+    ]
   },
   "hooks": {
     "PostToolUse": [
@@ -13,8 +17,8 @@
           },
           {
             "type": "command",
-            "shell": "powershell",
             "command": "$raw = [Console]::In.ReadToEnd(); $j = $raw | ConvertFrom-Json; $f = $j.tool_input.file_path; if ($f -and (Test-Path $f)) { npx --yes prettier --write $f --ignore-unknown }; exit 0",
+            "shell": "powershell",
             "statusMessage": "Running Prettier..."
           }
         ]

@@ -1,15 +1,15 @@
-import styles from "./Avatar.module.css"
+import styles from "./Avatar.module.css";
 
 type AvatarProps = {
-  name: string
-}
+  name: string;
+};
 
 function getInitials(name: string): string {
-  const uppercaseLetters = name.match(/[A-Z]/g) ?? []
+  const uppercaseLetters = name.match(/[A-Z]/g) ?? [];
   if (uppercaseLetters.length >= 2) {
-    return uppercaseLetters.slice(0, 2).join("")
+    return uppercaseLetters.slice(0, 2).join("");
   }
-  return name.charAt(0).toUpperCase()
+  return name.charAt(0).toUpperCase();
 }
 
 export default function Avatar({ name }: AvatarProps) {
@@ -17,5 +17,5 @@ export default function Avatar({ name }: AvatarProps) {
     <div className={styles.avatar} aria-label={`Avatar for ${name}`}>
       {getInitials(name)}
     </div>
-  )
+  );
 }
