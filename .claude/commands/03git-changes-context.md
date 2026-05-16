@@ -12,6 +12,7 @@ allowed-tools: Bash(git status:*), Bash(git diff --staged), Bash(git diff), Bash
 Analyze the staged and unstaged git changes above. Show them in two clear categories. Then create a commit message based on the staged changes only. Use present tense and explain "why" something has changed, not just "what" has changed.
 
 ## Commit types with emojis:
+
 Only use the following emojis:
 
 - ✨ `feat:` - New feature
@@ -22,6 +23,7 @@ Only use the following emojis:
 - ⚡ `perf:` - Performance
 
 ## Format:
+
 Use the following format for making the commit message:
 
 ```
@@ -33,11 +35,12 @@ Use the following format for making the commit message:
 
 Display all changed files in a single table with a status column to avoid duplication. Each file appears only once.
 
-| File | Change | Status |
-|---|---|---|
+| File            | Change                            | Status            |
+| --------------- | --------------------------------- | ----------------- |
 | path/to/file.ts | short description of what changed | staged / unstaged |
 
 Then:
+
 1. Propose a commit message based on staged changes only, with appropriate emoji
 2. Ask for confirmation before committing
 

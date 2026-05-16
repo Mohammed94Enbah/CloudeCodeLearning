@@ -12,11 +12,13 @@ npm run build    # production build
 ```
 
 Run a single test file:
+
 ```bash
 npm test -- tests/components/AuthForm.test.tsx
 ```
 
 Run tests matching a name pattern:
+
 ```bash
 npm test -- -t "password toggle"
 ```
