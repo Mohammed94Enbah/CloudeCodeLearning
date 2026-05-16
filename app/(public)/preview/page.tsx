@@ -1,5 +1,5 @@
 // preview page for newly created UI components
-import Avatar from "@/components/Avatar"
+import Avatar from "@/components/Avatar";
 
 export default function PreviewPage() {
   return (
@@ -8,7 +8,14 @@ export default function PreviewPage() {
 
       <section>
         <h3>Avatar</h3>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginTop: "0.5rem" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "1rem",
+            alignItems: "center",
+            marginTop: "0.5rem",
+          }}
+        >
           <Avatar name="john" />
           <Avatar name="Mohammed" />
           <Avatar name="JohnDoe" />
@@ -16,5 +23,5 @@ export default function PreviewPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
