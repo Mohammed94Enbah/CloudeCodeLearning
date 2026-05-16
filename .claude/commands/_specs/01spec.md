@@ -14,13 +14,13 @@ Your job will be to turn the user input above into:
 
 - A human friendly feature title in kebab-case (e.g. new-heist-form)
 - A safe git branch name not already taken (e.g. claude/feature/new-heist-form)
-- A detailed markdown spec file under the _specs/ directory
+- A command file under `.claude/commands/_specs/features/` that the user can invoke to implement the feature
 
-Then save the spec file to disk and print a short summary of what you did.
+Then save the command file to disk and print a short summary of what you did.
 
 ## Step 1. Check the current branch
 
-Check the current Git branch, and abort this entire process if there are any uncommitted, unstaged, or untracked files in the working directory. Tell the user to commit or stash changes before proceeding, and DO NOT GO ANY FURTHER.
+Check the current Git branch. Note the branch name for use in later steps. Do not abort if there are uncommitted, staged, or untracked files — continue regardless of working directory state.
 
 ## Step 2. Parse the arguments
 
@@ -52,16 +52,16 @@ If you cannot infer a sensible `feature_title` and `feature_slug`, ask the user 
 
 Before making any content, switch to a new Git branch using the `branch_name` derived from the `$ARGUMENTS`. If the branch name is already taken, then append a version number to it: e.g. `claude/feature/card-component-01`
 
-## Step 4. Draft the spec content
+## Step 4. Create the command file
 
-Create a markdown spec document that Plan mode can use directly and save it under `.claude/_specs/features/<feature_slug>.md`. Use the exact structure as defined in the spec template file here: @.claude/_specs/02template.md. Do not add technical implementation details such as code examples.
+Create a command file at `.claude/commands/_specs/features/<feature_slug>.md` using the exact structure defined in the template here: @.claude/commands/_specs/02template.md. Replace all `<feature-name>` placeholders with the actual `feature_slug`, and the description frontmatter value with `Implement <feature_title>`. Do not add technical implementation details such as code examples.
 
 ## Step 5. Final output to the user
 
 After the file is saved, respond to the user with a short summary in this exact format:
 
 Branch: <branch_name>
-Spec file: .claude/_specs/features/<feature_slug>.md
+Command: .claude/commands/_specs/features/<feature_slug>.md
 Title: <feature_title>
 
-Do not repeat the full spec in the chat output unless the user explicitly asks to see it. The main goal is to save the spec file and report where it lives and what branch name to use.
+Do not repeat the full spec in the chat output unless the user explicitly asks to see it. The main goal is to save the command file and report where it lives and what branch name to use.

@@ -1,6 +1,10 @@
+---
+description: Implement <feature-name>
+allowed-tools: Read, Write, Edit, Glob, Bash
+---
+
 # Spec for <feature-name>
 
-path: .claude/commands/_specs/features/<feature-name>.md
 branch: claude/feature/<feature-name>
 figma_component (if used): <figma-compoennt-name>
 
@@ -25,6 +29,6 @@ figma_component (if used): <figma-compoennt-name>
 - ...
 
 ## Testing Guidelines 
-Create test files in the ./tests folder for the new feature , and create meanigful tests for the 
+Create test files in the ./tests folder for the new feature , and create meaningful tests for the 
 following cases , without going too heavy.
 - ...
