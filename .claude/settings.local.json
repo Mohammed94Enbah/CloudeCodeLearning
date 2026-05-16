@@ -1,8 +1,24 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(git push *)",
-      "Bash(git add *)"
+    "allow": ["Bash(git push *)", "Bash(git add *)"]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"hello\""
+          },
+          {
+            "type": "command",
+            "shell": "powershell",
+            "command": "$raw = [Console]::In.ReadToEnd(); $j = $raw | ConvertFrom-Json; $f = $j.tool_input.file_path; if ($f -and (Test-Path $f)) { npx --yes prettier --write $f --ignore-unknown }; exit 0",
+            "statusMessage": "Running Prettier..."
+          }
+        ]
+      }
     ]
   }
 }
