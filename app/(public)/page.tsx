@@ -2,19 +2,20 @@
 // when logged in --> to /heists
 // when not logged in --> to /login
 
-import { Clock8 } from "lucide-react"
+import { Clock8 } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="center-content">
       <div className="page-content">
         <h1>
-          P<Clock8 className="logo" strokeWidth={2.75} />cket Heist
+          P<Clock8 className="logo" strokeWidth={2.75} />
+          cket Heist
         </h1>
-        <div>Tiny missions. Big office mischief.</div>
+        <div>Your colleagues never saw it coming.</div>
         <p>
           Assign covert tasks to your colleagues, track their progress, and
-          watch the chaos unfold — all under the guise of the  normal workday.
+          watch the chaos unfold — all under the guise of the normal workday.
         </p>
         <p>
           Whether you&apos;re swapping someone&apos;s keyboard keys, hiding a
@@ -24,5 +25,5 @@ export default function Home() {
         </p>
       </div>
     </div>
-  )
+  );
 }
